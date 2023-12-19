@@ -9,6 +9,7 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {JSX, SVGProps} from "react";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import DownloadBtn from "@/components/component/downloadBtn";
+import AppCard from "@/components/component/AppCard";
 
 function TryShuffle() {
     return (
@@ -29,7 +30,7 @@ function TryShuffle() {
                                 Select the appropriate OS below and the download will begin.
                             </p>
                         </div>
-                        <DownloadBtn className="space-y-2" />
+                        <DownloadBtn className="space-y-2"/>
                     </div>
                 </PopoverContent>
             </Popover>
@@ -106,7 +107,7 @@ function GreetingSection() {
                             </p>
                         </div>
                         <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                            <TryShuffle />
+                            <TryShuffle/>
                             <Link
                                 className="inline-flex h-10 items-center justify-center rounded-md bg-gray-700 px-8 text-sm font-medium text-gray-200 shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-600 disabled:pointer-events-none disabled:opacity-50"
                                 href="https://tryshfl.syuk.me"
@@ -178,6 +179,11 @@ function KeyFeaturesSection() {
 }
 
 function KeyAppsSection() {
+    const apps = [
+        {title: "File System", id: "filesystem", description: "Manage your files and folders with ease."},
+        {title: "Text Utilities", id: "textutilities", description: "Manipulate text and strings with ease."},
+    ];
+
     return (
         <section className="w-full py-12 md:py-24 lg:py-32">
             <div className="container space-y-12 px-4 md:px-6 mx-auto">
@@ -196,65 +202,9 @@ function KeyAppsSection() {
                     </div>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ext-white">
-                    <Card className="bg-gray-800 text-white">
-                        <CardHeader>
-                            <CardTitle>Text</CardTitle>
-                            <CardDescription>Test</CardDescription>
-                        </CardHeader>
-                        <Popover>
-                            <PopoverTrigger asChild>
-                                <CardContent className="text-sm">
-                                    <Button
-                                        className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-800 hover:text-gray-50 focus:bg-gray-750 focus:text-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-gray-50 dark:focus:bg-gray-700 dark:focus:text-gray-50 dark:data-[active]:bg-gray-700/50 dark:data-[state=open]:bg-gray-700/50"
-                                    >
-                                        Download
-                                    </Button>
-                                </CardContent>
-                            </PopoverTrigger>
-                            <PopoverContent className="w-80 bg-amber-50">
-                                <code
-                                    className="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6">
-                                    <span className="flex gap-2">
-                                        <span className="text-blue-500">(~)</span>
-                                        <span className="text-yellow-500">-{'>'}</span>
-                                        <span>appmgr</span>
-                                        <span>add</span>
-                                        <span className="text-yellow-500">filesystem</span>
-                                    </span>
-
-                                    <Button>
-                                        <svg
-                                            className="shrink-0 h-5 w-5 transition text-gray-500 group-hover:text-white"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
-                                            <path
-                                                d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z">
-                                            </path>
-                                        </svg>
-                                    </Button>
-                                </code>
-                            </PopoverContent>
-                        </Popover>
-                    </Card>
-                    <Card className="bg-gray-800 text-white">
-                        <CardHeader>
-                            <CardTitle>Test</CardTitle>
-                            <CardDescription>Test</CardDescription>
-                        </CardHeader>
-                    </Card>
-                    <Card className="bg-gray-800 text-white">
-                        <CardHeader>
-                            <CardTitle>Test</CardTitle>
-                            <CardDescription>Test</CardDescription>
-                        </CardHeader>
-                    </Card>
-                    <Card className="bg-gray-800 text-white">
-                        <CardHeader>
-                            <CardTitle>Test</CardTitle>
-                            <CardDescription>Test</CardDescription>
-                        </CardHeader>
-                    </Card>
+                    {apps.map(value => {
+                        return <AppCard key={value.id} title={value.title} id={value.id} description={value.description}/>;
+                    })}
                 </div>
             </div>
         </section>
