@@ -3,7 +3,6 @@
  * @see https://v0.dev/t/CZdMfJMAW4r
  */
 import Link from "next/link"
-import {NavigationMenu, NavigationMenuLink, NavigationMenuList} from "@/components/ui/navigation-menu"
 import {Button} from "@/components/ui/button"
 import {JSX, SVGProps} from "react";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
@@ -124,6 +123,8 @@ function KeyAppsSection() {
     const apps = [
         {title: "File System", id: "filesystem", description: "Manage your files and folders with ease."},
         {title: "Text Utilities", id: "textutilities", description: "Manipulate text and strings with ease."},
+        {title: "Date and Time", id: "dateandtime", description: "Collection of commands related to date or time"},
+        {title: "Unit Converter", id: "unitconverter", description: "Collection of commands related to unit conversion"},
     ];
 
     return (
