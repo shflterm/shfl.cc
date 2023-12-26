@@ -10,8 +10,10 @@ import { JSX, SVGProps } from "react";
 
 export function Repo() {
     const apps = [
-        {title: "File System", id: "filesystem", description: "Manage your files and folders with ease."},
-        {title: "Text Utilities", id: "textutilities", description: "Manipulate text and strings with ease."},
+        {title: "File System", id: "filesystem", description: "Collection of commands related to file system"},
+        {title: "Text Utilities", id: "textutilities", description: "Collection of commands related to text manipulation"},
+        {title: "Date and Time", id: "dateandtime", description: "Collection of commands related to date or time"},
+        {title: "Unit Converter", id: "unitconverter", description: "Collection of commands related to unit conversion"},
     ];
 
     return (

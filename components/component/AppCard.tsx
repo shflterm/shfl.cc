@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
-import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
+import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 
 interface AppProps {
@@ -32,24 +31,14 @@ const AppCard: React.FC<AppProps> = ({title, id, description}) => {
 
     return (
         <div>
-            <Card className="bg-gray-800 text-white">
+            <Card className="bg-gray-800 text-white h-full">
                 <CardHeader>
                     <CardTitle>{title}</CardTitle>
                     <CardDescription>{description}</CardDescription>
                 </CardHeader>
-                <Popover>
-                    <PopoverTrigger asChild>
-                        <CardContent className="text-sm">
-                            <Button
-                                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-800 hover:text-gray-50 focus:bg-gray-750 focus:text-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-gray-50 dark:focus:bg-gray-700 dark:focus:text-gray-50 dark:data-[active]:bg-gray-700/50 dark:data-[state=open]:bg-gray-700/50"
-                            >
-                                Download
-                            </Button>
-                        </CardContent>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-80 bg-amber-50">
-                        <code
-                            className="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6">
+                <Button onClick={copyToClipboard} className="align-bottom">
+                    <code
+                        className="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg mb-8 mr-4">
                                     <span className="flex gap-2">
                                         <span className="text-blue-500">(~)</span>
                                         <span className="text-yellow-500">-{'>'}</span>
@@ -57,12 +46,11 @@ const AppCard: React.FC<AppProps> = ({title, id, description}) => {
                                         <span>add</span>
                                         <span className="text-yellow-500">{id}</span>
                                     </span>
-                            <Button onClick={copyToClipboard}>Copy</Button>
-                        </code>
-                        {isCopied && <span>Copied!</span>}
-                    </PopoverContent>
-                </Popover>
+                    </code>
+                </Button>
             </Card>
+            <div className={"bg-gray-700 w-fit mt-3 p-2 rounded-lg absolute " +
+                `transition-all duration-200 ${isCopied ? "opacity-100" : "opacity-0"}`}>Copied!</div>
         </div>
     );
 };
