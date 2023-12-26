@@ -39,17 +39,17 @@ function Header() {
                     <NavigationMenuLink asChild>
                         <Link
                             className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-800 hover:text-gray-50 focus:bg-gray-800 focus:text-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-gray-50 dark:focus:bg-gray-700 dark:focus:text-gray-50 dark:data-[active]:bg-gray-700/50 dark:data-[state=open]:bg-gray-700/50"
-                            href="#"
+                            href="/docs"
                         >
-                            Features
+                            Documentation
                         </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
                         <Link
                             className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-800 hover:text-gray-50 focus:bg-gray-800 focus:text-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-gray-50 dark:focus:bg-gray-700 dark:focus:text-gray-50 dark:data-[active]:bg-gray-700/50 dark:data-[state=open]:bg-gray-700/50"
-                            href="#"
+                            href="/"
                         >
-                            Documentation
+                            Tutorials
                         </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
