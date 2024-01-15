@@ -3,24 +3,23 @@
  * @see https://v0.dev/t/CZdMfJMAW4r
  */
 import Link from "next/link"
-import {Button} from "@/components/ui/button"
-import {JSX, SVGProps} from "react";
+import React, {JSX, ReactNode, SVGProps} from "react";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import DownloadBtn from "@/components/component/downloadBtn";
 import AppCard from "@/components/component/AppCard";
 import Header from "@/components/component/header";
 import Console from "@/components/component/console";
 
-function DownloadShuffle() {
+interface DownloadShuffleProps {
+    children?: ReactNode;
+}
+
+function DownloadShuffle({children}: DownloadShuffleProps) {
     return (
         <div>
             <Popover>
                 <PopoverTrigger asChild>
-                    <Button
-                        className="inline-flex h-10 items-center justify-center rounded-md bg-gray-700 px-8 text-sm font-medium text-gray-200 shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-600 disabled:pointer-events-none disabled:opacity-50"
-                    >
-                        Download
-                    </Button>
+                    {children}
                 </PopoverTrigger>
                 <PopoverContent className="w-80 bg-amber-50">
                     <div className="grid gap-4">
@@ -128,9 +127,17 @@ function KeyFeaturesSection() {
 function KeyAppsSection() {
     const apps = [
         {title: "File System", id: "filesystem", description: "Collection of commands related to file system"},
-        {title: "Text Utilities", id: "textutilities", description: "Collection of commands related to text manipulation"},
+        {
+            title: "Text Utilities",
+            id: "textutilities",
+            description: "Collection of commands related to text manipulation"
+        },
         {title: "Date and Time", id: "dateandtime", description: "Collection of commands related to date or time"},
-        {title: "Unit Converter", id: "unitconverter", description: "Collection of commands related to unit conversion"},
+        {
+            title: "Unit Converter",
+            id: "unitconverter",
+            description: "Collection of commands related to unit conversion"
+        },
     ];
 
     return (
@@ -167,36 +174,38 @@ function LearningSection() {
             <div className="container space-y-12 px-4 md:px-6 mx-auto">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">📚 Learning Resources</h2>
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">🎉 Isn't this interesting?</h2>
                         <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                            Enhance your knowledge and skills with our comprehensive learning resources.
+                            Don't hesitate, get started now!
                         </p>
                     </div>
                 </div>
                 <div
                     className="mx-auto grid max-w-sm items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+                    <DownloadShuffle>
+                        <div
+                            className="grid gap-1 items-center justify-center rounded-md bg-gray-700 px-8 text-sm font-medium text-gray-200 shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-600 disabled:pointer-events-none disabled:opacity-50">
+                            <h3 className="mt-5 text-lg font-bold">🖥️ Try Now!</h3>
+                            <p className="mb-5 text-sm text-gray-400">
+                                After receiving the zip file, simply run the executable inside.<br/>
+                                How easy is it?
+                            </p>
+                        </div>
+                    </DownloadShuffle>
                     <Link
                         className="grid gap-1 items-center justify-center rounded-md bg-gray-700 px-8 text-sm font-medium text-gray-200 shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-600 disabled:pointer-events-none disabled:opacity-50"
                         href="#">
-                        <h3 className="mt-5 text-lg font-bold">📘 Documentation</h3>
+                        <h3 className="mt-5 text-lg font-bold">📘 Read Documentation</h3>
                         <p className="mb-5 text-sm text-gray-400">
-                            Comprehensive and easy-to-understand documentation to help you get started.
+                            Learn how to use Shuffle and its features with our comprehensive documentation.
                         </p>
                     </Link>
                     <Link
                         className="grid gap-1 items-center justify-center rounded-md bg-gray-700 px-8 text-sm font-medium text-gray-200 shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-600 disabled:pointer-events-none disabled:opacity-50"
                         href="#">
-                        <h3 className="mt-5 text-lg font-bold">📘🎓 Tutorials</h3>
+                        <h3 className="mt-5 text-lg font-bold">📘🎓 Get Tutorials</h3>
                         <p className="mb-5 text-sm text-gray-400">
-                            Step-by-step guides to help you understand and utilize Shuffle's features effectively.
-                        </p>
-                    </Link>
-                    <Link
-                        className="grid gap-1 items-center justify-center rounded-md bg-gray-700 px-8 text-sm font-medium text-gray-200 shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-600 disabled:pointer-events-none disabled:opacity-50"
-                        href="#">
-                        <h3 className="mt-5 text-lg font-bold">🎥 Webinars</h3>
-                        <p className="mb-5 text-sm text-gray-400">
-                            Learn from experts in our interactive webinars and improve your proficiency.
+                            Learn how to use Shuffle and its features with our comprehensive documentation.
                         </p>
                     </Link>
                 </div>
