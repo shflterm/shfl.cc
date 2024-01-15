@@ -85,7 +85,7 @@ const ShflConsole: React.FC<ConsoleProps> = ({className}) => {
     };
 
     return (
-        <div key="1" className={"border rounded-md p-4 bg-gray-700 flex-grow h-screen overflow-hidden " + className}>
+        <div key="1" className={"border rounded-md p-4 bg-gray-700 flex-grow overflow-hidden " + className}>
             <div className="ml-4">
                 <div className="flex space-x-2 mr-auto rounded-full">
                     <div className="bg-red-500 w-4 h-4 rounded-full mt-3"/>

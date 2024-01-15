@@ -8,6 +8,8 @@ import {JSX, SVGProps} from "react";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import DownloadBtn from "@/components/component/downloadBtn";
 import AppCard from "@/components/component/AppCard";
+import Header from "@/components/component/header";
+import Console from "@/components/component/console";
 
 function DownloadShuffle() {
     return (
@@ -38,34 +40,38 @@ function DownloadShuffle() {
 
 function GreetingSection() {
     return (
-        <section id="greeting" className="w-full py-12">
-            <div className="container space-y-12 px-4 md:px-6 mx-auto">
-                <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] h-[50vh]">
-                    <div className="flex flex-col justify-center space-y-4">
-                        <div className="space-y-2">
-                            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Welcome
-                                to
-                                Shuffle</h1>
-                            <p className="max-w-[600px] text-gray-400 md:text-xl">
-                                Shuffle offers key features like smart auto-completion, AI natural language
-                                processing, scripting
-                                capabilities, and a modern user experience to enhance your productivity and
-                                streamline your tasks.
-                            </p>
-                        </div>
-                        <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                            <DownloadShuffle/>
+        <div className="mb-80">
+            <Header/>
+            <section id="greeting" className="w-full py-12 h-screen">
+                <div className="container space-y-12 px-4 md:px-6 mx-auto">
+                    <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] h-[75vh]">
+                        <Console className="h-auto"></Console>
+                        <div className="flex flex-col justify-center space-y-4">
+                            <div className="space-y-2">
+                                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Welcome
+                                    to
+                                    Shuffle</h1>
+                                <p className="max-w-[600px] text-gray-400 md:text-xl">
+                                    Shuffle offers key features like smart auto-completion, AI natural language
+                                    processing, scripting
+                                    capabilities, and a modern user experience to enhance your productivity and
+                                    streamline your tasks.
+                                </p>
+                            </div>
+                            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                                <DownloadShuffle/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 }
 
 function KeyFeaturesSection() {
     return (
-        <section id="key-features" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="key-features" className="w-full py-12 md:py-24 lg:py-32 h-screen">
             <div className="container space-y-12 px-4 md:px-6 mx-auto">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
@@ -128,7 +134,7 @@ function KeyAppsSection() {
     ];
 
     return (
-        <section id="key-apps" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="key-apps" className="w-full py-12 md:py-24 lg:py-32 h-screen">
             <div className="container space-y-12 px-4 md:px-6 mx-auto">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
@@ -157,7 +163,7 @@ function KeyAppsSection() {
 
 function LearningSection() {
     return (
-        <section id="learning" className="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+        <section id="learning" className="w-full py-12 md:py-24 lg:py-32 bg-gray-800 h-[40vh]">
             <div className="container space-y-12 px-4 md:px-6 mx-auto">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
